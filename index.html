@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>摩卡咖啡介紹 - 咖啡愛好者的最愛</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Lora:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+            opacity: 0;
+            animation: fadeIn 1s forwards;
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* 設定導航欄 */
+        .navbar {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 10px 20px;
+            border-radius: 30px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            z-index: 10;
+        }
+        
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.2em;
+            padding: 5px 15px;
+            border-radius: 20px;
+            transition: background-color 0.3s ease;
+        }
+
+        .navbar a:hover {
+            background-color: #9e5b3d;
+        }
+
+        /* 首頁大圖 */
+        .hero {
+            background-color: #9e5b3d;
+            color: #fff;
+            text-align: center;
+            padding: 80px 20px;
+            font-size: 2em;
+            animation: slideIn 1s ease-out;
+        }
+
+        @keyframes slideIn {
+            0% {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .hero h1 {
+            margin: 0;
+        }
+
+        .content {
+            padding: 40px;
+            text-align: center;
+            opacity: 0;
+            animation: fadeIn 1.5s forwards;
+        }
+
+        .content img {
+            width: 80%;
+            max-width: 600px;
+            border-radius: 15px;
+            margin: 20px 0;
+            opacity: 0;
+            animation: slideInImg 1s ease-out forwards;
+        }
+
+        @keyframes slideInImg {
+            0% {
+                transform: translateY(30px);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .content h2 {
+            font-size: 2em;
+            color: #9e5b3d;
+        }
+
+        .content p {
+            font-size: 1.2em;
+            line-height: 1.8;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+
+        footer a {
+            color: #ffcc00;
+            text-decoration: none;
+        }
+
+        /* 畫廊樣式 */
+        .gallery {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .gallery img {
+            width: 300px;
+            height: auto;
+            border-radius: 15px;
+            opacity: 0;
+            animation: fadeInGallery 1s forwards;
+        }
+
+        @keyframes fadeInGallery {
+            0% {
+                transform: translateY(30px);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 導航欄 -->
+    <div class="navbar">
+        <a href="#">首頁</a>
+        <a href="#about">關於摩卡</a>
+        <a href="#how-to-make">如何製作</a>
+        <a href="#gallery">畫廊</a>
+    </div>
+
+    <!-- 首頁大圖 -->
+    <div class="hero">
+        <h1>歡迎來到摩卡咖啡的世界</h1>
+        <p>了解摩卡的歷史、風味及製作方法，讓我們一起深入探索這杯經典飲品！</p>
+    </div>
+
+    <!-- 內容區域 -->
+    <div id="about" class="content">
+        <h2>什麼是摩卡咖啡？</h2>
+        <p>摩卡咖啡是一種將濃縮咖啡與熱巧克力混合的飲品。它的名稱來自於也門的摩卡港（Mocha），這裡曾經是世界著名的咖啡貿易中心。這款飲品的獨特之處在於它融合了咖啡的濃郁香氣與巧克力的甜美風味，是喜歡濃郁、甜蜜口感的人們的首選。</p>
+        <img src="https://exp-picture.cdn.bcebos.com/bfa52adaf05e4a239496bbab1dd818196020e27d.jpg" alt="摩卡咖啡">
+    </div>
+
+    <!-- 製作方法 -->
+    <div id="how-to-make" class="content" style="background-color: #f9f9f9;">
+        <h2>如何製作摩卡咖啡</h2>
+        <p>摩卡咖啡的製作方式相對簡單，只需幾種食材即可在家中輕鬆完成：</p>
+        <ol style="text-align: left; font-size: 1.2em; max-width: 800px; margin: 0 auto;">
+            <li><strong>材料：</strong>濃縮咖啡、熱巧克力、鮮奶油、巧克力粉</li>
+            <li><strong>步驟：</strong>
+                <ul>
+                    <li>將濃縮咖啡和熱巧克力混合。</li>
+                    <li>加入打發鮮奶油，並輕輕攪拌。</li>
+                    <li>最後撒上巧克力粉作為裝飾。</li>
+                </ul>
+            </li>
+        </ol>
+        <img src="https://www.nescafe.com/tw/sites/default/files/2023-05/CupIllustrations_Mocha_1066x970-04_0.jpg" alt="製作摩卡咖啡">
+    </div>
+
+    <!-- 画廊 -->
+    <div id="gallery" class="content">
+        <h2>摩卡咖啡畫廊</h2>
+        <p>來看看一些美麗的摩卡咖啡圖片，感受它的魅力。</p>
+        <div class="gallery">
+            <img src="https://www.nespresso.com/ncp/res/uploads/recipes/nespresso-recipes-Borgia-Mocha-Barista.jpg" alt="摩卡咖啡1">
+            <img src="https://d3l76hx23vw40a.cloudfront.net/recipe/gy13-093.jpg" alt="摩卡咖啡2">
+            <img src="https://sbk2024.e21magicmedia.com.tw/common/objects/images/product/20130813161442705.jpg" alt="摩卡咖啡3">
+        </div>
+    </div>
+
+    <!-- 底部 -->
+    <footer>
+        <p>&copy; 2024 摩卡咖啡愛好者 | <a href="mailto:contact@moka.com">聯絡我們</a></p>
+    </footer>
+
+</body>
+</html>
