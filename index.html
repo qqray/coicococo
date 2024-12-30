@@ -6,12 +6,14 @@
     <title>摩卡咖啡介紹 - 咖啡愛好者的最愛</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Lora:wght@400;600&display=swap" rel="stylesheet">
     <style>
+        /* 基本設置 */
         body {
             font-family: 'Montserrat', sans-serif;
             margin: 0;
             padding: 0;
             background-color: #f4f4f4;
             color: #333;
+            overflow-x: hidden;
             opacity: 0;
             animation: fadeIn 1s forwards;
         }
@@ -22,40 +24,42 @@
             }
         }
 
-        /* 設定導航欄 */
+        /* 頂部導航欄 */
         .navbar {
             position: fixed;
             top: 20px;
             left: 20px;
-            background-color: rgba(0, 0, 0, 0.6);
-            padding: 10px 20px;
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 8px 18px;
             border-radius: 30px;
             display: flex;
             justify-content: space-around;
             align-items: center;
             z-index: 10;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
         }
-        
+
         .navbar a {
             color: white;
             text-decoration: none;
-            font-size: 1.2em;
-            padding: 5px 15px;
+            font-size: 1em; /* 調整字體大小 */
+            padding: 5px 12px;
             border-radius: 20px;
-            transition: background-color 0.3s ease;
+            transition: background-color 0.3s ease, transform 0.3s ease;
         }
 
         .navbar a:hover {
             background-color: #9e5b3d;
+            transform: scale(1.1);
         }
 
-        /* 首頁大圖 */
+        /* 首頁大圖區 */
         .hero {
             background-color: #9e5b3d;
             color: #fff;
             text-align: center;
-            padding: 80px 20px;
-            font-size: 2em;
+            padding: 80px 20px;  /* 調整上部與下部內邊距 */
+            font-size: 1.8em;     /* 縮小字體 */
             animation: slideIn 1s ease-out;
         }
 
@@ -72,25 +76,45 @@
 
         .hero h1 {
             margin: 0;
+            font-size: 2.2em; /* 縮小標題字體大小 */
+            font-family: 'Lora', serif;
         }
 
+        .hero p {
+            font-size: 1.1em; /* 縮小段落字體 */
+            margin-top: 15px;
+            font-family: 'Lora', serif;
+        }
+
+        /* 內容區域 */
         .content {
-            padding: 40px;
-            text-align: center;
+            padding: 60px 20px;
+            text-align: center; /* 讓文字內容居中 */
             opacity: 0;
-            animation: fadeIn 1.5s forwards;
+            animation: fadeInContent 1.5s forwards;
+        }
+
+        @keyframes fadeInContent {
+            0% {
+                transform: translateY(30px);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
         }
 
         .content img {
-            width: 80%;
+            width: 90%;
             max-width: 600px;
             border-radius: 15px;
             margin: 20px 0;
             opacity: 0;
-            animation: slideInImg 1s ease-out forwards;
+            animation: fadeInImg 1s ease-out forwards;
         }
 
-        @keyframes slideInImg {
+        @keyframes fadeInImg {
             0% {
                 transform: translateY(30px);
                 opacity: 0;
@@ -102,34 +126,52 @@
         }
 
         .content h2 {
-            font-size: 2em;
+            font-size: 2.5em;
             color: #9e5b3d;
+            font-family: 'Lora', serif;
+            margin-bottom: 20px; /* 增加標題與段落的間距 */
         }
 
         .content p {
-            font-size: 1.2em;
+            font-size: 1.1em;
             line-height: 1.8;
             max-width: 800px;
             margin: 0 auto;
+            font-family: 'Lora', serif;
         }
 
-        footer {
-            background-color: #333;
-            color: #fff;
-            text-align: center;
+        /* 製作方法區 */
+        #how-to-make {
+            background-color: #f9f9f9;
+            padding: 60px 20px;
+            text-align: center;  /* 讓標題和段落文字居中 */
+        }
+
+        ol {
+            text-align: left;
+            font-size: 1.1em;  /* 字體縮小 */
+            max-width: 800px;
+            margin: 0 auto;
             padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
 
-        footer a {
-            color: #ffcc00;
-            text-decoration: none;
+        ol li {
+            margin: 15px 0;
         }
 
-        /* 畫廊樣式 */
+        /* 画廊區 */
+        #gallery {
+            padding: 60px 20px;
+            background-color: #fff;
+        }
+
         .gallery {
             display: flex;
             justify-content: center;
-            gap: 20px;
+            gap: 30px;
             flex-wrap: wrap;
         }
 
@@ -137,6 +179,7 @@
             width: 300px;
             height: auto;
             border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
             opacity: 0;
             animation: fadeInGallery 1s forwards;
         }
@@ -150,6 +193,26 @@
                 transform: translateY(0);
                 opacity: 1;
             }
+        }
+
+        /* 底部 */
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            font-family: 'Lora', serif;
+            font-size: 1em;
+            margin-top: 60px;
+        }
+
+        footer a {
+            color: #ffcc00;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
@@ -177,11 +240,11 @@
     </div>
 
     <!-- 製作方法 -->
-    <div id="how-to-make" class="content" style="background-color: #f9f9f9;">
+    <div id="how-to-make" class="content">
         <h2>如何製作摩卡咖啡</h2>
         <p>摩卡咖啡的製作方式相對簡單，只需幾種食材即可在家中輕鬆完成：</p>
-        <ol style="text-align: left; font-size: 1.2em; max-width: 800px; margin: 0 auto;">
-            <li><strong>材料：</strong>濃縮咖啡、熱巧克力、鮮奶油、巧克力粉</li>
+        <ol>
+            <li><strong><p><p/>材料：</strong>濃縮咖啡、熱巧克力、鮮奶油、巧克力粉</li>
             <li><strong>步驟：</strong>
                 <ul>
                     <li>將濃縮咖啡和熱巧克力混合。</li>
